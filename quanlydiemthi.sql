@@ -7,7 +7,7 @@ CREATE TABLE Student (
     birthday DATE NOT NULL,
     gender BIT(1) NOT NULL,
     address TEXT,
-    phoneNumber VARCHAR(45)
+    phoneNumber VARCHAR(45) unique
 );
 
 CREATE TABLE Subject (
@@ -20,6 +20,7 @@ CREATE TABLE Mark (
     subjectId VARCHAR(4),
     studentId VARCHAR(4),
     point INT(11),
+    primary key (subjectId,studentId),
     FOREIGN KEY (studentId)
         REFERENCES Student (studentId),
     FOREIGN KEY (subjectId)
