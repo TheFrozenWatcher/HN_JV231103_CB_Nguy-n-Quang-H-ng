@@ -213,8 +213,8 @@ SELECT
     CASE
         WHEN gender = 1 THEN 'Nam'
         WHEN gender = 0 THEN 'Nữ'
-    END AS gender,
-    COUNT(*)
+    END AS 'Giới tính',
+    COUNT(*) as 'Số lượng'
 FROM
     student
 GROUP BY gender;
